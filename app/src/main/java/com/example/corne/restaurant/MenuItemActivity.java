@@ -17,9 +17,12 @@ public class MenuItemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_item);
+
+        // Retrieve the clicked category
         Intent intent = getIntent();
         retrievedItem = (MenuItem) intent.getSerializableExtra("item");
 
+        // Set all views to display the details of the selected item
         ImageView image =  findViewById(R.id.image);
         String url = retrievedItem.getImageURL();
         Picasso.get().load(url).into(image);

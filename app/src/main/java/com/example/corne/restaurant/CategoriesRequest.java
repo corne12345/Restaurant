@@ -26,11 +26,13 @@ public class CategoriesRequest implements Response.Listener<JSONObject>, Respons
         this.context = context;
     }
 
+    // Callback function
     public interface Callback {
         void gotCategories(ArrayList<String> categories);
         void gotCategoriesError(String message);
     }
 
+    // Method that makes a queue and tries to add this request to it
     void getCategories(Callback activity){
         this.activity = activity;
         String url = "https://resto.mprog.nl/categories";
@@ -41,17 +43,25 @@ public class CategoriesRequest implements Response.Listener<JSONObject>, Respons
             queue.add(jsonObjectRequest);
         }
         catch (Exception error){
+
+            // Return an error message if the request is not succesfull
             Log.e("Request", error.getMessage());
         }
     }
 
     @Override
     public void onErrorResponse(VolleyError error) {
+
+        // Start method in CategoriesActivity when the request fails
         activity.gotCategoriesError(error.getMessage());
     }
 
     @Override
+
+    // If the request is succesfull
     public void onResponse(JSONObject response) {
+
+        // Try to transform the JSONArray to a list of the categories
         try {
             JSONArray categoriesArray = response.getJSONArray("categories");
             for (int i = 0; i < categoriesArray.length(); i++){

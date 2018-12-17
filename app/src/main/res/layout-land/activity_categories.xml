@@ -9,34 +9,30 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="273dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:layout_width="377dp"
+        android:layout_height="249dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
         app:srcCompat="@drawable/restaurant" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="220dp"
         android:background="@android:color/background_dark"
         android:padding="16dp"
-        android:paddingTop="32dp"
         android:text="Restaurant Vandaag \nJan van Scorelstraat 111 \n3581 BX Utrecht \nTel: 030-2518663 \nwww.resto.mprog.nl \nGeopend: 19:00 tot 23:00"
         android:textColor="@android:color/background_light"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/categoriesList"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Restaurant Vandaag \n Jan van Scorelstraat 111 \n 3581 BX Utrecht \n Tel: 030-2518663 \n www.resto.mprog.nl \n Geopend: 19:00 tot 23:00" />
 
     <ListView
         android:id="@+id/categoriesList"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="117dp"
         android:background="@android:color/darker_gray"
         android:orientation="horizontal"
         android:padding="16dp"

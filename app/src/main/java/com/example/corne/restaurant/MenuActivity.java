@@ -19,35 +19,37 @@ public class MenuActivity extends AppCompatActivity implements MenuItemRequest.C
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        // Get clicked category and save it in a string
         Intent intent = getIntent();
         String retrievedCategory = intent.getStringExtra("categories");
 
+        // Make a request for all the menu-items in this category
         MenuItemRequest x = new MenuItemRequest(this, retrievedCategory);
         x.getMenuItems(this);
-        Toast.makeText(this, retrievedCategory, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void gotMenuItems(ArrayList<MenuItem> menuItems) {
-        Toast.makeText(this, "some menu's", Toast.LENGTH_LONG).show();
 
-        // instantiate MenuAdapter
+        // instantiate MenuAdapter for listView
         MenuAdapter adapter = new MenuAdapter(this, R.layout.menu_item, menuItems);
         ListView listView = findViewById(R.id.menuList);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new onItemClickListener());
+        // Set listener for listView of menu items
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                // Start MenuItemActivity and give it the clicked menu item
+                MenuItem menuItem = (MenuItem) parent.getItemAtPosition(position);
+                Intent intent = new Intent (MenuActivity.this, MenuItemActivity.class);
+                intent.putExtra("item", menuItem);
+                startActivity(intent);
+            }
+        });
     }
 
-    private class onItemClickListener implements android.widget.AdapterView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            MenuItem menuItem = (MenuItem) parent.getItemAtPosition(position);
-            Intent intent = new Intent (MenuActivity.this, MenuItemActivity.class);
-            intent.putExtra("item", menuItem);
-            startActivity(intent);
-        }
-    }
 
     @Override
     public void gotMenuItemsError(String message) {
