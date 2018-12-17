@@ -1,17 +1,27 @@
 # Restaurant
-## Part of Native App Studio (UvA)
+App 6 of course Native App Studio (UvA)
 
+## Extra's
+- Nice visual layout
+- App optimized for both landscape and portrait mode
+- Handles dead link
+
+## Summary
 This app uses Volley to load files from the internet and displays a restaurant menu as a result.
 The use of an adapter and request are necessary to succesfully implement this all.
 
-![Alt Text](https://github.com/corne12345/Restaurant/blob/master/doc/Screenshot_20181205-103419_Restaurant.jpg)
+<img src="https://github.com/corne12345/Restaurant/blob/master/doc/Screenshot_20181217-203215_Restaurant.jpg" alt="drawing" width="200"/>
+Figure 1: CategoriesActivity in portrait mode
 
-Screenshot of the categories menu
+<img src="https://github.com/corne12345/Restaurant/blob/master/doc/Screenshot_20181217-203220_Restaurant.jpg" alt="drawing" height="200"/>
+Figure 2: CategoriesActivity in landscape mode
 
-![Alt Text](https://github.com/corne12345/Restaurant/blob/master/doc/Screenshot_20181205-103423_Restaurant.jpg)
+<img src="https://github.com/corne12345/Restaurant/blob/master/doc/Screenshot_20181217-203229_Restaurant.jpg" alt="drawing" width="200"/>
+Figure 3: ListView with MenuItems (entrees)
 
-Screenshot of the entrees menu
+<img src="https://github.com/corne12345/Restaurant/blob/master/doc/Screenshot_20181217-203232_Restaurant.jpg" alt="drawing" width="200"/>
+Figure 4: MenuItemActivity in portrait mode
 
-![Alt Text](https://github.com/corne12345/Restaurant/blob/master/doc/Screenshot_20181205-103428_Restaurant.jpg)
+<img src="https://github.com/corne12345/Restaurant/blob/master/doc/Screenshot_20181217-203239_Restaurant.jpg" alt="drawing" height="200"/>
+Figure 5: MenuItemActivity in landscape mode
 
-Screenshot of the detail screen of the pesto linguine
